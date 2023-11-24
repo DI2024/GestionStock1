@@ -151,7 +151,7 @@ namespace GestionStock1.PL
                     {
                         if ((bool)dvgclient.Rows[i].Cells[0].Value == true)
                         {
-                            clclient.supprimer_Client(int.Parse(dvgclient.Rows[i].Cells[1].Value.ToString())); //id client
+                            clclient.supprimer_Client(int.Parse(dvgclient.Rows[i].Cells[1].Value.ToString())); //id client  
                         }
                     }
                     //actualisez le tableau
