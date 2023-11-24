@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dvgclient = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comborecherche = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -48,8 +48,8 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dvgclient)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,8 +80,8 @@
             this.Column4,
             this.Column5,
             this.Column8,
-            this.Column6,
-            this.Column7});
+            this.Column7,
+            this.Column6});
             this.dvgclient.EnableHeadersVisualStyles = false;
             this.dvgclient.Location = new System.Drawing.Point(3, 247);
             this.dvgclient.Name = "dvgclient";
@@ -103,22 +103,23 @@
             this.dvgclient.Size = new System.Drawing.Size(1131, 452);
             this.dvgclient.TabIndex = 17;
             // 
-            // comboBox1
+            // comborecherche
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comborecherche.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comborecherche.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comborecherche.FormattingEnabled = true;
+            this.comborecherche.Items.AddRange(new object[] {
             "Nom",
             "Prenom",
             "Telephone",
             "Email",
-            "Ville",
-            "Pays"});
-            this.comboBox1.Location = new System.Drawing.Point(242, 147);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(339, 37);
-            this.comboBox1.TabIndex = 16;
+            "Pays",
+            "Ville"});
+            this.comborecherche.Location = new System.Drawing.Point(242, 147);
+            this.comborecherche.Name = "comborecherche";
+            this.comborecherche.Size = new System.Drawing.Size(339, 37);
+            this.comborecherche.TabIndex = 16;
+            this.comborecherche.SelectedIndexChanged += new System.EventHandler(this.comborecherche_SelectedIndexChanged);
             // 
             // panel3
             // 
@@ -163,6 +164,7 @@
             this.txtrecherche.TabIndex = 14;
             this.txtrecherche.Text = "Recherche";
             this.txtrecherche.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtrecherche.TextChanged += new System.EventHandler(this.txtrecherche_TextChanged);
             this.txtrecherche.Enter += new System.EventHandler(this.txtrecherche_Enter);
             // 
             // panel1
@@ -274,13 +276,6 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Ville";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
             // Column7
             // 
             this.Column7.HeaderText = "Pays";
@@ -288,12 +283,19 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Ville";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // USER_Liste_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dvgclient);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comborecherche);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.txtrecherche);
@@ -313,7 +315,7 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dvgclient;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comborecherche;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
@@ -329,7 +331,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

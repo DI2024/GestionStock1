@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,8 @@ namespace GestionStock1.PL
         {
             InitializeComponent();
             db = new DbStockContext();
+            //desactiver textbox de recherche
+            txtrecherche.Enabled = false;
         }
 
         //ajouter dans le tableau
@@ -162,6 +165,53 @@ namespace GestionStock1.PL
                 {
                     MessageBox.Show("Suppression annulé", "Suppression", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
+            }
+        }
+
+        private void comborecherche_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //activer txtrecherche si j'ai selectionné un champ
+            txtrecherche.Enabled = true; 
+            txtrecherche.Focus();
+            txtrecherche.Text = ""; //vider txtrecherche
+        }
+
+        private void txtrecherche_TextChanged(object sender, EventArgs e)
+        {
+            db = new DbStockContext();
+            var listerecherche =db.clients.ToList(); //liste de recherche = liste de clients
+            if (txtrecherche.Text!="")
+            {
+                switch(comborecherche.Text)
+                {
+                    case "Nom":
+                        listerecherche = listerecherche.Where(s => s.Nom_client.IndexOf(txtrecherche.Text, StringComparison.CurrentCultureIgnoreCase)!=-1).ToList(); break;
+                        //stringcomparison.currentcultureignorecase = si maj ou mins
+                        //!=-1 exist dans la bd 
+                        break;
+                    case "Prenom":
+                        listerecherche = listerecherche.Where(s => s.Prenom_client.IndexOf(txtrecherche.Text, StringComparison.CurrentCultureIgnoreCase) != -1).ToList(); 
+                        break;
+                    case "Telephonne":
+                        listerecherche = listerecherche.Where(s => s.Telephonne_client.IndexOf(txtrecherche.Text, StringComparison.CurrentCultureIgnoreCase) != -1).ToList(); 
+                        break;
+                    case "Email":
+                        listerecherche = listerecherche.Where(s => s.Email_client.IndexOf(txtrecherche.Text, StringComparison.CurrentCultureIgnoreCase) != -1).ToList(); 
+                        break;
+                    case "Pays":
+                        listerecherche = listerecherche.Where(s => s.Pays_client.IndexOf(txtrecherche.Text, StringComparison.CurrentCultureIgnoreCase) != -1).ToList();
+                        break;
+                    case "Ville":
+                        listerecherche = listerecherche.Where(s => s.Ville_client.IndexOf(txtrecherche.Text, StringComparison.CurrentCultureIgnoreCase) != -1).ToList();
+                        break;
+                }
+            }
+            //vider le tableau
+            dvgclient.Rows.Clear();
+            //ajouter listerecherche dans le tableau client
+            foreach (var L in listerecherche) 
+            { 
+                dvgclient.Rows.Add(false, L.Id_client,L.Nom_client,L.Prenom_client,L.Adresse_client,L.Telephonne_client,L.Email_client,L.Pays_client,L.Ville_client) ;
             }
         }
     }
