@@ -115,7 +115,7 @@ namespace GestionStock1.PL
 
                     }
                 }
-                frmclient.lblTitre.Text = "Modifer Client";
+                frmclient.lblTitreP.Text = "Modifer Client";
                 frmclient.btnactualiser.Visible = false;
                 frmclient.ShowDialog();
             }

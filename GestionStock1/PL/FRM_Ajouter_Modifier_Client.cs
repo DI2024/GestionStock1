@@ -20,7 +20,7 @@ namespace GestionStock1.PL
             InitializeComponent();
             this.usclient = userC;
         }
-        //les comp obligatoire
+        //les chomp obligatoire
         string testobligatoire()
         {
             if (txtnom.Text=="" || txtnom.Text=="Nom de Client")
@@ -221,7 +221,7 @@ namespace GestionStock1.PL
                 MessageBox.Show(testobligatoire(), "Obligatoire",MessageBoxButtons.OK, MessageBoxIcon.Error); ;
             }
             else
-            if(lblTitre.Text=="Ajouter Client")
+            if(lblTitreP.Text=="Ajouter Client")
             {
                
                 BL.CLS_Client clClient = new BL.CLS_Client();

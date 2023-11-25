@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTitre = new System.Windows.Forms.Label();
+            this.lblTitreP = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -73,16 +73,16 @@
             this.panel13.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblTitre
+            // lblTitreP
             // 
-            this.lblTitre.AutoSize = true;
-            this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitre.ForeColor = System.Drawing.Color.Silver;
-            this.lblTitre.Location = new System.Drawing.Point(98, 21);
-            this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(209, 36);
-            this.lblTitre.TabIndex = 0;
-            this.lblTitre.Text = "Ajouter Client";
+            this.lblTitreP.AutoSize = true;
+            this.lblTitreP.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitreP.ForeColor = System.Drawing.Color.Silver;
+            this.lblTitreP.Location = new System.Drawing.Point(98, 21);
+            this.lblTitreP.Name = "lblTitreP";
+            this.lblTitreP.Size = new System.Drawing.Size(209, 36);
+            this.lblTitreP.TabIndex = 0;
+            this.lblTitreP.Text = "Ajouter Client";
             // 
             // panel5
             // 
@@ -512,7 +512,7 @@
             this.Controls.Add(this.txtadresse);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.txtnom);
-            this.Controls.Add(this.lblTitre);
+            this.Controls.Add(this.lblTitreP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FRM_Ajouter_Modifier_Client";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -565,7 +565,7 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel18;
-        public System.Windows.Forms.Label lblTitre;
+        public System.Windows.Forms.Label lblTitreP;
         public System.Windows.Forms.Button btnactualiser;
         public System.Windows.Forms.TextBox txtnom;
         public System.Windows.Forms.TextBox txtadresse;

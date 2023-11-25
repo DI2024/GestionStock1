@@ -102,11 +102,25 @@ namespace GestionStock1.PL
                 USER_Liste_Client.Instance.Dock = DockStyle.Fill;
                 USER_Liste_Client.Instance.BringToFront();
             }
+            else
+            {
+                USER_Liste_Client.Instance.BringToFront();
+            }
         }
 
         private void btnproduit_Click(object sender, EventArgs e)
         {
             pnlBut.Top = btnproduit.Top;
+            if (!pnlafficher.Controls.Contains(USER_Liste_Produit.Instance))
+            {
+                pnlafficher.Controls.Add(USER_Liste_Produit.Instance);
+                USER_Liste_Produit.Instance.Dock = DockStyle.Fill;
+                USER_Liste_Produit.Instance.BringToFront();
+            }
+            else
+            {
+                USER_Liste_Produit.Instance.BringToFront();
+            }
         }
 
         private void btncategorie_Click(object sender, EventArgs e)
