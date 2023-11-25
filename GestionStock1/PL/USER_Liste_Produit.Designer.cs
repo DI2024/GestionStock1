@@ -275,6 +275,7 @@
             this.btnafficherphotoproduit.TabIndex = 27;
             this.btnafficherphotoproduit.Text = "Afficher Photo";
             this.btnafficherphotoproduit.UseVisualStyleBackColor = false;
+            this.btnafficherphotoproduit.Click += new System.EventHandler(this.btnafficherphotoproduit_Click);
             // 
             // btnsupprimer
             // 

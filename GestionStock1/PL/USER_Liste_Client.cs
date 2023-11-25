@@ -47,6 +47,7 @@ namespace GestionStock1.PL
                 dvgclient.Rows.Add(false,S.Id_client,S.Nom_client,S.Prenom_client,S.Adresse_client,S.Telephonne_client,S.Email_client,S.Ville_client,S.Pays_client);
             }
         }
+        //verifier combien de ligne est selectionne
         public string SelectVerif()
         {
             int Nombreligneselect = 0;
