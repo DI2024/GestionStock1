@@ -53,8 +53,8 @@ warning 6002: The table/view 'GESTION_DE_STOCK.dbo.details_commande' does not ha
           <Property Name="Nom_produit" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="Quantite_produit" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="Prix_produit" Type="nvarchar" MaxLength="250" Nullable="false" />
-          <Property Name="Image_produit" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="Id_categorie" Type="int" Nullable="false" />
+          <Property Name="Image_produit" Type="image" Nullable="false" />
         </EntityType>
         <EntityType Name="utilisateur">
           <Key>
@@ -194,8 +194,8 @@ warning 6002: The table/view 'GESTION_DE_STOCK.dbo.details_commande' does not ha
           <Property Name="Nom_produit" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Quantite_produit" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Prix_produit" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Image_produit" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Id_categorie" Type="Int32" Nullable="false" />
+          <Property Name="Image_produit" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <NavigationProperty Name="categorie" Relationship="Self.FK_produit_categorie1" FromRole="produit" ToRole="categorie" />
           <NavigationProperty Name="details_commande" Relationship="Self.FK_details_commande_produit" FromRole="produit" ToRole="details_commande" />
         </EntityType>
@@ -342,8 +342,8 @@ warning 6002: The table/view 'GESTION_DE_STOCK.dbo.details_commande' does not ha
                 <ScalarProperty Name="Nom_produit" ColumnName="Nom_produit" />
                 <ScalarProperty Name="Quantite_produit" ColumnName="Quantite_produit" />
                 <ScalarProperty Name="Prix_produit" ColumnName="Prix_produit" />
-                <ScalarProperty Name="Image_produit" ColumnName="Image_produit" />
                 <ScalarProperty Name="Id_categorie" ColumnName="Id_categorie" />
+                <ScalarProperty Name="Image_produit" ColumnName="Image_produit" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

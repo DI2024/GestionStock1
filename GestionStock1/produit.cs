@@ -24,8 +24,8 @@ namespace GestionStock1
         public string Nom_produit { get; set; }
         public string Quantite_produit { get; set; }
         public string Prix_produit { get; set; }
-        public string Image_produit { get; set; }
         public int Id_categorie { get; set; }
+        public byte[] Image_produit { get; set; }
     
         public virtual categorie categorie { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

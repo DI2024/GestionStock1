@@ -19,6 +19,8 @@ namespace GestionStock1.PL
         {
             InitializeComponent();
             this.usclient = userC;
+
+            
         }
         //les chomp obligatoire
         string testobligatoire()

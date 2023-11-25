@@ -57,32 +57,33 @@
   <ItemGroup>
     <Compile Include="BL\CLS_Client.cs" />
     <Compile Include="BL\CLS_connexion.cs" />
+    <Compile Include="BL\CLS_Produit.cs" />
     <Compile Include="categorie.cs">
-      <DependentUpon>Dbstock.tt</DependentUpon>
+      <DependentUpon>DbStock.tt</DependentUpon>
     </Compile>
     <Compile Include="client.cs">
-      <DependentUpon>Dbstock.tt</DependentUpon>
+      <DependentUpon>DbStock.tt</DependentUpon>
     </Compile>
     <Compile Include="commande.cs">
-      <DependentUpon>Dbstock.tt</DependentUpon>
+      <DependentUpon>DbStock.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dbstock.Context.cs">
+    <Compile Include="DbStock.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Dbstock.Context.tt</DependentUpon>
+      <DependentUpon>DbStock.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dbstock.cs">
+    <Compile Include="DbStock.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Dbstock.tt</DependentUpon>
+      <DependentUpon>DbStock.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dbstock.Designer.cs">
+    <Compile Include="DbStock.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Dbstock.edmx</DependentUpon>
+      <DependentUpon>DbStock.edmx</DependentUpon>
     </Compile>
     <Compile Include="details_commande.cs">
-      <DependentUpon>Dbstock.tt</DependentUpon>
+      <DependentUpon>DbStock.tt</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_Ajouter_Modifier_Client.cs">
       <SubType>Form</SubType>
@@ -121,12 +122,12 @@
       <DependentUpon>USER_Liste_Produit.cs</DependentUpon>
     </Compile>
     <Compile Include="produit.cs">
-      <DependentUpon>Dbstock.tt</DependentUpon>
+      <DependentUpon>DbStock.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="utilisateur.cs">
-      <DependentUpon>Dbstock.tt</DependentUpon>
+      <DependentUpon>DbStock.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="PL\FRM_Ajouter_Modifier_Client.resx">
       <DependentUpon>FRM_Ajouter_Modifier_Client.cs</DependentUpon>
@@ -155,12 +156,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="Dbstock.edmx">
+    <EntityDeploy Include="DbStock.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Dbstock.Designer.cs</LastGenOutput>
+      <LastGenOutput>DbStock.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Dbstock.edmx.diagram">
-      <DependentUpon>Dbstock.edmx</DependentUpon>
+    <None Include="App.Config" />
+    <None Include="DbStock.edmx.diagram">
+      <DependentUpon>DbStock.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -174,23 +176,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Dbstock.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Dbstock.Context.cs</LastGenOutput>
-      <DependentUpon>Dbstock.edmx</DependentUpon>
-    </Content>
-    <Content Include="Dbstock.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Dbstock.edmx</DependentUpon>
-      <LastGenOutput>Dbstock.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DbStock.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbStock.edmx</DependentUpon>
+      <LastGenOutput>DbStock.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DbStock.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbStock.edmx</DependentUpon>
+      <LastGenOutput>DbStock.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

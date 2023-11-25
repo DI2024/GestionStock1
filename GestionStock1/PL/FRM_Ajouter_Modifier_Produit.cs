@@ -7,14 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace GestionStock1.PL
 {
     public partial class FRM_Ajouter_Modifier_Produit : Form
     {
-        public FRM_Ajouter_Modifier_Produit()
+        private DbStockContext db;
+        private UserControl userProduit;
+        public FRM_Ajouter_Modifier_Produit(UserControl User)
         {
             InitializeComponent();
+            db = new DbStockContext();
+            this.userProduit = User;
+            //afficher les categorie dans combobox
+            comboCategorie.DataSource = db.categories.ToList();
+            //pour filtrer seulement le nom des categorie
+            comboCategorie.DisplayMember = "Nom_categorie";
+            comboCategorie.ValueMember = "Id_categorie";
+            
         }
         //les chomp obligatoire
         string testobligatoire()
@@ -37,7 +48,7 @@ namespace GestionStock1.PL
                 return "Entrer l'image du Produit";
 
             }
-            if (comboProduit.Text == "" )
+            if (comboCategorie.Text == "" )
             {
                 return "Entrer la Categorie du Produit";
             }
@@ -128,7 +139,7 @@ namespace GestionStock1.PL
             txtQuantite.ForeColor = Color.Silver;
             txtPrix.Text = "Prix";
             txtPrix.ForeColor = Color.Silver;
-            comboProduit.Text = "";
+            comboCategorie.Text = "";
             PicProduit.Image = null;
 
         }
@@ -165,6 +176,28 @@ namespace GestionStock1.PL
             {
                 MessageBox.Show(testobligatoire(), "Obligatoire", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                if(lblTitre.Text=="Ajouter Produit")
+                {
+                    BL.CLS_Produit clproduit = new BL.CLS_Produit();
+                    //convertir image to format byte
+                    //ajouter using system io 
+                    MemoryStream MR = new MemoryStream();
+                    PicProduit.Image.Save(MR, PicProduit.Image.RawFormat);
+                    byte[] byteimage = MR.ToArray(); //convertir image en format byte
+                    if (clproduit.Ajouter_Produit(txtnomP.Text, txtQuantite.Text, txtPrix.Text, byteimage,Convert.ToInt32(comboCategorie.SelectedValue))==true)
+                    {
+                        MessageBox.Show("Produit ajouté avec succes","Ajouter",MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        (userProduit as USER_Liste_Produit).Actualiserdvg();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Produit déja existe", "Ajouter", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+
         }
     }
 }

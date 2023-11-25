@@ -38,7 +38,7 @@
             this.btnenregistrerP = new System.Windows.Forms.Button();
             this.btnactualiserP = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboProduit = new System.Windows.Forms.ComboBox();
+            this.comboCategorie = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -102,7 +102,7 @@
             this.lblTitre.ForeColor = System.Drawing.Color.Silver;
             this.lblTitre.Location = new System.Drawing.Point(348, 29);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(257, 39);
+            this.lblTitre.Size = new System.Drawing.Size(247, 38);
             this.lblTitre.TabIndex = 4;
             this.lblTitre.Text = "Ajouter Produit";
             // 
@@ -168,13 +168,14 @@
             this.label2.TabIndex = 39;
             this.label2.Text = "Categorie:";
             // 
-            // comboProduit
+            // comboCategorie
             // 
-            this.comboProduit.FormattingEnabled = true;
-            this.comboProduit.Location = new System.Drawing.Point(642, 113);
-            this.comboProduit.Name = "comboProduit";
-            this.comboProduit.Size = new System.Drawing.Size(284, 24);
-            this.comboProduit.TabIndex = 40;
+            this.comboCategorie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboCategorie.FormattingEnabled = true;
+            this.comboCategorie.Location = new System.Drawing.Point(625, 113);
+            this.comboCategorie.Name = "comboCategorie";
+            this.comboCategorie.Size = new System.Drawing.Size(301, 28);
+            this.comboCategorie.TabIndex = 40;
             // 
             // panel5
             // 
@@ -264,7 +265,7 @@
             this.txtQuantite.Name = "txtQuantite";
             this.txtQuantite.Size = new System.Drawing.Size(286, 38);
             this.txtQuantite.TabIndex = 43;
-            this.txtQuantite.Text = "Quntité";
+            this.txtQuantite.Text = "Quantite";
             this.txtQuantite.Enter += new System.EventHandler(this.txtQuantite_Enter);
             this.txtQuantite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
             this.txtQuantite.Leave += new System.EventHandler(this.txtQuantite_Leave);
@@ -357,7 +358,7 @@
             this.Controls.Add(this.txtQuantite);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.txtnomP);
-            this.Controls.Add(this.comboProduit);
+            this.Controls.Add(this.comboCategorie);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnenregistrerP);
             this.Controls.Add(this.btnactualiserP);
@@ -397,7 +398,7 @@
         private System.Windows.Forms.Button btnenregistrerP;
         public System.Windows.Forms.Button btnactualiserP;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboProduit;
+        private System.Windows.Forms.ComboBox comboCategorie;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox textBox2;
