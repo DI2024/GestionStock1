@@ -150,6 +150,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RAP\FRM_RAPPORT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RAP\FRM_RAPPORT.Designer.cs">
+      <DependentUpon>FRM_RAPPORT.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="utilisateur.cs">
       <DependentUpon>DbStock.tt</DependentUpon>
@@ -184,6 +190,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RAP\FRM_RAPPORT.resx">
+      <DependentUpon>FRM_RAPPORT.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="DbStock.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DbStock.Designer.cs</LastGenOutput>
@@ -231,8 +240,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="RAP\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
