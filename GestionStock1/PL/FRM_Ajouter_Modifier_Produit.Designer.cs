@@ -393,12 +393,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         public System.Windows.Forms.Label lblTitre;
-        private System.Windows.Forms.PictureBox PicProduit;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnenregistrerP;
         public System.Windows.Forms.Button btnactualiserP;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboCategorie;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox textBox2;
@@ -411,7 +408,10 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox textBox4;
         public System.Windows.Forms.TextBox txtPrix;
-        private System.Windows.Forms.Button btnPaarcourir;
         private System.Windows.Forms.Button btnquitter;
+        public System.Windows.Forms.Button btnenregistrerP;
+        public System.Windows.Forms.PictureBox PicProduit;
+        public System.Windows.Forms.Button btnPaarcourir;
+        public System.Windows.Forms.ComboBox comboCategorie;
     }
 }

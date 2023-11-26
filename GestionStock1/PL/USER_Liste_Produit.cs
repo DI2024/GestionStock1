@@ -14,18 +14,18 @@ namespace GestionStock1.PL
 {
     public partial class USER_Liste_Produit : UserControl
     {
-        private static USER_Liste_Produit UserClient;
+        private static USER_Liste_Produit UserProduit;
         private DbStockContext db;
         //creer un instance pour le usercontrole
         public static USER_Liste_Produit Instance
         {
             get
             {
-                if (UserClient == null)
+                if (UserProduit == null)
                 {
-                    UserClient = new USER_Liste_Produit();
+                    UserProduit = new USER_Liste_Produit();
                 }
-                return UserClient;
+                return UserProduit;
             }
         }
 
@@ -91,15 +91,50 @@ namespace GestionStock1.PL
         private void btnajouterproduit_Click(object sender, EventArgs e)
         {
             PL.FRM_Ajouter_Modifier_Produit frmProduit = new PL.FRM_Ajouter_Modifier_Produit(this);
+            
             frmProduit.ShowDialog();
+            
         }
 
         private void btnmodifierproduit_Click(object sender, EventArgs e)
         {
+            produit PR = new produit();
             PL.FRM_Ajouter_Modifier_Produit frmproduit = new PL.FRM_Ajouter_Modifier_Produit(this);
-            frmproduit.lblTitre.Text = "Modifier Produit";
-            frmproduit.btnactualiserP.Visible = false;
-            frmproduit.ShowDialog();
+
+            if (SelectVerif() != null)
+            {
+                
+                
+            }
+            else
+            {
+                MessageBox.Show(SelectVerif(), "Modification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                frmproduit.lblTitre.Text = "Modifier Produit";
+                frmproduit.btnactualiserP.Visible = false;
+                for (int i = 0; i < dvgproduit.Rows.Count; i++) //verifier la ligne selectionné
+                {
+                    if ((bool)dvgproduit.Rows[i].Cells[0].Value == true) //si la ligne est selectionné
+                    {
+                        int MYIDSELECT = (int)dvgproduit.Rows[i].Cells[1].Value; //MYIDSELECT =id de ligne selectionner
+                        PR = db.produits.SingleOrDefault(s => s.Id_produit == MYIDSELECT);//verifier si id de produit = id selectionner dans le tableau 
+                        if (PR != null) //si existe
+                        {
+                            frmproduit.comboCategorie.Text = dvgproduit.Rows[i].Cells[5].Value.ToString();
+                            frmproduit.txtnomP.Text = dvgproduit.Rows[i].Cells[2].Value.ToString();
+                            frmproduit.txtQuantite.Text = dvgproduit.Rows[i].Cells[3].Value.ToString();
+                            frmproduit.txtPrix.Text = dvgproduit.Rows[i].Cells[4].Value.ToString();
+                            frmproduit.IDPRODUIT = (int)dvgproduit.Rows[i].Cells[1].Value;
+                            //afficher image pour modifier
+                            MemoryStream MS = new MemoryStream(PR.Image_produit); //pour convertir image et afficher dans picbox
+                            frmproduit.PicProduit.Image= Image.FromStream(MS);
+
+                        }
+                        
+                        
+                    }
+                }
+                frmproduit.ShowDialog();
+            }
         }
 
         private void btnafficherphotoproduit_Click(object sender, EventArgs e)
@@ -107,6 +142,7 @@ namespace GestionStock1.PL
             produit PR = new produit();
             if(SelectVerif()!=null)
             {
+             
                 MessageBox.Show(SelectVerif(),"Selectionner",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else

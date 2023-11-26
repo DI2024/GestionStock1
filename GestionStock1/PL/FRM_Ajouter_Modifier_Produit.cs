@@ -111,7 +111,7 @@ namespace GestionStock1.PL
 
         private void FRM_Ajouter_Modifier_Produit_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnquitter_Click(object sender, EventArgs e)
@@ -170,6 +170,7 @@ namespace GestionStock1.PL
             }
         }
 
+        public int IDPRODUIT;
         private void btnenregistrerP_Click(object sender, EventArgs e)
         {
             if (testobligatoire()!=null)
@@ -195,6 +196,29 @@ namespace GestionStock1.PL
                     {
                         MessageBox.Show("Produit déja existe", "Ajouter", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
+                }
+                else //modification
+                {
+                    MemoryStream MR = new MemoryStream();
+                    PicProduit.Image.Save(MR, PicProduit.Image.RawFormat);
+                    byte[] byteimage = MR.ToArray(); //convertir image en format byte
+                    BL.CLS_Produit clsproduit = new BL.CLS_Produit();
+                    DialogResult RS =MessageBox.Show("Voulez-vous vraiment modifier ce produit?","Modification",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (RS == DialogResult.Yes)
+                    {
+                        clsproduit.Modifier_Produit(IDPRODUIT, txtnomP.Text, txtQuantite.Text, txtPrix.Text, byteimage, Convert.ToInt32(comboCategorie.SelectedValue));
+                        MessageBox.Show("Produit modifié avec succés","Modification",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+                        //actualiser
+                        (userProduit as USER_Liste_Produit).Actualiserdvg();
+                        Close(); //pour quitter formulaire
+                    }
+                    else
+                    {
+                        MessageBox.Show("Modification annulé", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        
+                    }
+
+
                 }
             }
 

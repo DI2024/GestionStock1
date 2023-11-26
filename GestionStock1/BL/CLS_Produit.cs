@@ -30,5 +30,21 @@ namespace GestionStock1.BL
                 return false;
             }
         }
+
+        //modifier Produit 
+        public void Modifier_Produit(int IDP,string NomP, string Qantite, string Prix, byte[] imageP, int idcategorie)
+        {
+            PR= new produit();
+            PR = db.produits.SingleOrDefault(s => s.Id_produit == IDP); //si id de produit = mon id 
+            if (PR!=null) // s'il existe
+            {
+                PR.Nom_produit = NomP;
+                PR.Quantite_produit= Qantite;
+                PR.Prix_produit= Prix;
+                PR.Image_produit= imageP;
+                PR.Id_categorie= idcategorie;
+                db.SaveChanges();
+            }
+        }
     }
 }

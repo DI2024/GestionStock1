@@ -80,6 +80,7 @@ namespace GestionStock1.PL
             {
                 txtrecherche.Text = "";
                 txtrecherche.ForeColor = Color.Black;
+               
 
             }
         }
@@ -87,6 +88,7 @@ namespace GestionStock1.PL
         private void USER_Liste_Client_Load(object sender, EventArgs e)
         {
             Actualisedatagrid();
+           
         }
 
         private void btnajouter_Click(object sender, EventArgs e)
