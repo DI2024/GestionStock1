@@ -103,12 +103,10 @@ namespace GestionStock1.PL
 
             if (SelectVerif() != null)
             {
-                
-                
+                MessageBox.Show(SelectVerif(), "Modification", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show(SelectVerif(), "Modification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 frmproduit.lblTitre.Text = "Modifier Produit";
                 frmproduit.btnactualiserP.Visible = false;
                 for (int i = 0; i < dvgproduit.Rows.Count; i++) //verifier la ligne selectionné
@@ -165,6 +163,62 @@ namespace GestionStock1.PL
                         }
                     }
                 }
+            }
+        }
+
+        private void btnsupprimerproduit_Click(object sender, EventArgs e)
+        {
+            if (SelectVerif()=="Selectionner Un Produit")
+            {
+                MessageBox.Show(SelectVerif(), "Suppression", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult DR = MessageBox.Show("Voulez-vous vraiment supprimez ce produit?","Suppression",MessageBoxButtons.YesNo
+                    , MessageBoxIcon.Question);
+                if (DR==DialogResult.Yes)
+                {
+                    //verifier combien de ligne est selectionné
+                    for (int i = 0; i < dvgproduit.Rows.Count; i++)
+                    {
+                        if ((bool)dvgproduit.Rows[i].Cells[0].Value == true) //si la ligne est selectionne
+                        {
+                            BL.CLS_Produit clproduit = new BL.CLS_Produit();
+                            int idselect = (int)dvgproduit.Rows[i].Cells[1].Value; //id de ligne selectionne
+                            clproduit.Supprimer_Produit(idselect);
+                        }
+                    }
+                    //actualiser le tableau 
+                    Actualiserdvg();
+                    MessageBox.Show("Produit Supprimé avec succés ", "Suppression",MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                }
+                else
+                {
+                    MessageBox.Show("Suppression annulé", "Suppression", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+               
+            }
+
+        }
+
+        private void txtrecherche_TextChanged(object sender, EventArgs e)
+        {
+            db = new DbStockContext();
+            var listerecherche = db.produits.ToList(); //liste de recherche = liste de clients
+           //recherche seulement par nom 
+                        listerecherche = listerecherche.Where(s => s.Nom_produit.IndexOf(txtrecherche.Text, StringComparison.CurrentCultureIgnoreCase) != -1).ToList(); 
+                        //stringcomparison.currentcultureignorecase = si maj ou mins
+                        //!=-1 exist dans la bd 
+
+            //vider le tableau
+            dvgproduit.Rows.Clear();
+            //ajouter listerecherche dans le tableau client
+            categorie cat = new categorie();
+            foreach (var L in listerecherche)
+            {
+                cat = db.categories.SingleOrDefault(s => s.Id_categorie == L.Id_categorie); //pour afficher le nom de categorie
+                dvgproduit.Rows.Add(false, L.Id_produit, L.Nom_produit,L.Quantite_produit,L.Prix_produit,cat.Nom_categorie) ;
             }
         }
     }
