@@ -193,6 +193,7 @@
     <EmbeddedResource Include="RAP\FRM_RAPPORT.resx">
       <DependentUpon>FRM_RAPPORT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RAP\RPT_Produit.rdlc" />
     <EntityDeploy Include="DbStock.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DbStock.Designer.cs</LastGenOutput>
@@ -202,6 +203,7 @@
       <DependentUpon>DbStock.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\produit.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

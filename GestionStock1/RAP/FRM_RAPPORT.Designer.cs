@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.RPAffchier = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // RPAffchier
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(979, 703);
-            this.reportViewer1.TabIndex = 0;
+            this.RPAffchier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RPAffchier.Location = new System.Drawing.Point(0, 0);
+            this.RPAffchier.Name = "RPAffchier";
+            this.RPAffchier.ServerReport.BearerToken = null;
+            this.RPAffchier.Size = new System.Drawing.Size(979, 703);
+            this.RPAffchier.TabIndex = 0;
             // 
             // FRM_RAPPORT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 703);
-            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.RPAffchier);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FRM_RAPPORT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -57,6 +57,6 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        public Microsoft.Reporting.WinForms.ReportViewer RPAffchier;
     }
 }

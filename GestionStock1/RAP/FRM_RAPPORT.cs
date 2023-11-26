@@ -20,7 +20,7 @@ namespace GestionStock1.RAP
         private void FRM_RAPPORT_Load(object sender, EventArgs e)
         {
 
-            this.reportViewer1.RefreshReport();
+            this.RPAffchier.RefreshReport();
         }
     }
 }
