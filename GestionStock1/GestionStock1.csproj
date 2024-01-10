@@ -189,6 +189,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RAP\FRM_RAPPORT.resx">
       <DependentUpon>FRM_RAPPORT.cs</DependentUpon>
@@ -228,6 +229,70 @@
       <DependentUpon>DbStock.edmx</DependentUpon>
       <LastGenOutput>DbStock.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Actions-list-add-icon.png" />
+    <None Include="Resources\adresse.png" />
+    <None Include="Resources\Apple-iPhone-7-128-Go-4-7-Rouge.jpg" />
+    <None Include="Resources\Button-Delete-icon.png" />
+    <None Include="Resources\c05477854.png" />
+    <None Include="Resources\Categorie.png" />
+    <None Include="Resources\Categorize_32.png" />
+    <None Include="Resources\Close-2-icon.png" />
+    <None Include="Resources\Connected_16.png" />
+    <None Include="Resources\connectmode.png" />
+    <None Include="Resources\Copier.png" />
+    <None Include="Resources\Country_32.png" />
+    <None Include="Resources\customer-people.jpg" />
+    <None Include="Resources\customer-service-icon.png" />
+    <None Include="Resources\deconnect.png" />
+    <None Include="Resources\Deconnecte.png" />
+    <None Include="Resources\dell.jpg" />
+    <None Include="Resources\Download.png" />
+    <None Include="Resources\Epson.jpg" />
+    <None Include="Resources\Excel-icon.png" />
+    <None Include="Resources\Gmail_32.png" />
+    <None Include="Resources\ImpriCanon.jpg" />
+    <None Include="Resources\Imprimer.png" />
+    <None Include="Resources\iphone 4.jpg" />
+    <None Include="Resources\iphone 4s.jpg" />
+    <None Include="Resources\iphone 5.jpg" />
+    <None Include="Resources\iphone 5s.jpg" />
+    <None Include="Resources\iphone 6.jpg" />
+    <None Include="Resources\iphone 6plus.jpg" />
+    <None Include="Resources\iphone 6s.jpg" />
+    <None Include="Resources\iphone s6plus.jpg" />
+    <None Include="Resources\iphone4c.jpg" />
+    <None Include="Resources\iphone7plus.png" />
+    <None Include="Resources\iphonex.jpg" />
+    <None Include="Resources\k.png" />
+    <None Include="Resources\login_32.png" />
+    <None Include="Resources\MACBOOKPRO.jpg" />
+    <None Include="Resources\Menu_32.png" />
+    <None Include="Resources\Motdepasse_32.png" />
+    <None Include="Resources\Office-Client-Male-Light-icon.png" />
+    <None Include="Resources\pc acer.jpg" />
+    <None Include="Resources\pcmsi.jpeg" />
+    <None Include="Resources\pctoshiba.jpg" />
+    <None Include="Resources\Pdpkeyfeature-sm-g920azdaatt-600x600-C1-062016.jpg" />
+    <None Include="Resources\Phone_32.png" />
+    <None Include="Resources\Pictures-icon.png" />
+    <None Include="Resources\print-icon.png" />
+    <None Include="Resources\prix_32.png" />
+    <None Include="Resources\product_32.png" />
+    <None Include="Resources\Quantie_32.png" />
+    <None Include="Resources\Recycle-iconaaa.png" />
+    <None Include="Resources\Refresh-icon.png" />
+    <None Include="Resources\samsung s5.jpg" />
+    <None Include="Resources\samsung s7.jpg" />
+    <None Include="Resources\samsung s8 plus.png" />
+    <None Include="Resources\samsung s8.jpg" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\Settings_32.png" />
+    <None Include="Resources\shop-cart-add-icon.png" />
+    <None Include="Resources\shopping-icon.png" />
+    <None Include="Resources\Shutdown_32.png" />
+    <None Include="Resources\SM-T580NZKAXAR-02-71016.jpg" />
+    <None Include="Resources\Subtract_32.png" />
+    <None Include="Resources\ville_32.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

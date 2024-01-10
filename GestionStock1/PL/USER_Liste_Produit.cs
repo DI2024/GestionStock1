@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Microsoft.Reporting.WinForms;
 
 namespace GestionStock1.PL
 {
@@ -219,6 +220,52 @@ namespace GestionStock1.PL
             {
                 cat = db.categories.SingleOrDefault(s => s.Id_categorie == L.Id_categorie); //pour afficher le nom de categorie
                 dvgproduit.Rows.Add(false, L.Id_produit, L.Nom_produit,L.Quantite_produit,L.Prix_produit,cat.Nom_categorie) ;
+            }
+        }
+
+        private void btnimprimerselect_Click(object sender, EventArgs e)
+        {
+            db = new DbStockContext();
+            int idselect=0;
+            string Nomcategorie = null;
+            RAP.FRM_RAPPORT frmrpt = new RAP.FRM_RAPPORT();
+            produit PR = new produit();
+            if (SelectVerif()!= null)
+            {
+                MessageBox.Show(SelectVerif(), "Imprimer Produit", MessageBoxButtons.OK,MessageBoxIcon.Error); //verifier si l'utilisateur a coché plusieur ligne 
+
+            }
+            else
+            {
+                for (int i = 0; i < dvgproduit.Rows.Count; i++)
+                {
+                    if ((bool)dvgproduit.Rows[i].Cells[0].Value==true)//si ligne est coché
+                    {
+                        idselect = (int)dvgproduit.Rows[i].Cells[1].Value; //id de ligne selectionne 
+                        Nomcategorie = dvgproduit.Rows[i].Cells[5].Value.ToString();//nom de categorie
+                    }
+                }
+                ///////////////////////////////////
+                PR = db.produits.SingleOrDefault(s=>s.Id_produit == idselect);
+                if (PR == null) //si produit existe
+                {
+                    //donner le rapport
+                    frmrpt.RPAffchier.LocalReport.ReportEmbeddedResource = "GestionStock1.RAP.RPT_Produit.rdlc"; //chemin de rapport
+                    //ajouter using microsoft.reporting.winform
+                    ReportParameter Pcategorie = new ReportParameter("RPCategorie", Nomcategorie);//nom de categorie
+                    ReportParameter PNom = new ReportParameter("RPNom",PR.Nom_produit);//nom de produit
+                    ReportParameter Pquantite = new ReportParameter("RPQuantite",PR.Quantite_produit);//Quantite
+                    ReportParameter PPrix = new ReportParameter("RPPrix",PR.Prix_produit);//Prix
+
+                    //image de produit
+                    string ImageString = Convert.ToBase64String(PR.Image_produit);
+                    ReportParameter Pimage = new ReportParameter("RPImage", ImageString);//image doit etre convertit en string base64
+                    //sauvegarder les nouveaux paramettre dans le nouveau rapport 
+                    frmrpt.RPAffchier.LocalReport.SetParameters(new ReportParameter[] { Pcategorie, PNom, Pquantite, PPrix, Pimage });
+                    frmrpt.RPAffchier.RefreshReport();
+                    frmrpt.ShowDialog();//afficher formulaire de rapport
+
+                }
             }
         }
     }

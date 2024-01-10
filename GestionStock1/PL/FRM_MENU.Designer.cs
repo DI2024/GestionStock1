@@ -70,6 +70,7 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::GestionStock1.Properties.Resources.Shutdown_32;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.button1.Location = new System.Drawing.Point(896, 3);
@@ -97,7 +98,7 @@
             // 
             // pnlBut
             // 
-            this.pnlBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(5)))), ((int)(((byte)(88)))));
+            this.pnlBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.pnlBut.Location = new System.Drawing.Point(3, 127);
             this.pnlBut.Name = "pnlBut";
             this.pnlBut.Size = new System.Drawing.Size(10, 67);
@@ -120,7 +121,7 @@
             // btnutilisateur
             // 
             this.btnutilisateur.FlatAppearance.BorderSize = 0;
-            this.btnutilisateur.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(5)))), ((int)(((byte)(88)))));
+            this.btnutilisateur.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnutilisateur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnutilisateur.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnutilisateur.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -137,7 +138,7 @@
             // btncommande
             // 
             this.btncommande.FlatAppearance.BorderSize = 0;
-            this.btncommande.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(5)))), ((int)(((byte)(88)))));
+            this.btncommande.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btncommande.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncommande.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btncommande.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -154,7 +155,7 @@
             // btncategorie
             // 
             this.btncategorie.FlatAppearance.BorderSize = 0;
-            this.btncategorie.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(5)))), ((int)(((byte)(88)))));
+            this.btncategorie.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btncategorie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncategorie.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btncategorie.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -171,7 +172,7 @@
             // btnproduit
             // 
             this.btnproduit.FlatAppearance.BorderSize = 0;
-            this.btnproduit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(5)))), ((int)(((byte)(88)))));
+            this.btnproduit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnproduit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnproduit.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnproduit.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -234,7 +235,7 @@
             // btnclient
             // 
             this.btnclient.FlatAppearance.BorderSize = 0;
-            this.btnclient.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(5)))), ((int)(((byte)(88)))));
+            this.btnclient.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.btnclient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclient.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnclient.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -290,6 +291,7 @@
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::GestionStock1.Properties.Resources.Subtract_32;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.button2.Location = new System.Drawing.Point(819, 4);
@@ -301,7 +303,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(5)))), ((int)(((byte)(88)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(268, 0);
             this.panel2.Name = "panel2";

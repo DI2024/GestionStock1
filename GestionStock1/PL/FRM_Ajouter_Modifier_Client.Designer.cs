@@ -412,6 +412,7 @@
             this.btnquitter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnquitter.FlatAppearance.BorderSize = 0;
             this.btnquitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnquitter.Image = global::GestionStock1.Properties.Resources.Button_Delete_icon;
             this.btnquitter.Location = new System.Drawing.Point(855, 12);
             this.btnquitter.Name = "btnquitter";
             this.btnquitter.Size = new System.Drawing.Size(67, 67);
