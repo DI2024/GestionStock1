@@ -29,7 +29,7 @@ namespace GestionStock1.PL
                 return UserProduit;
             }
         }
-
+         
         public USER_Liste_Produit()
         {
             InitializeComponent();
